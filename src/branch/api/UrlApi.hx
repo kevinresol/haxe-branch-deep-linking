@@ -27,7 +27,7 @@ abstract UrlType(Int) {
 }
 
 typedef LinkData = {
-	?data:DynamicAccess<String>,
+	?data:DynamicAccess<Dynamic>,
 	?channel:String,
 	?feature:String,
 	?campaign:String,
