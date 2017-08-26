@@ -1,0 +1,17 @@
+{
+  "name": "branch-deep-linking",
+  "license": "MIT",
+  "tags": [
+    "branch",
+    "linking"
+  ],
+  "classPath": "src",
+  "contributors": [
+    "kevinresol"
+  ],
+  "releasenote": "initial release",
+  "version": "0.0.0",
+  "dependencies": {
+    "tink_web": ""
+  }
+}
