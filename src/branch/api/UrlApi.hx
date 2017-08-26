@@ -4,22 +4,36 @@ import haxe.DynamicAccess;
 using tink.CoreApi;
 
 interface UrlApi {
+	
+	
+	@:get('/')
+	function get(query:{
+		url:String,
+		branch_key:String,
+	}):LinkData;
+	
 	@:post('/')
 	function create(body:{
+		> LinkData,
 		branch_key:String,
-		?data:String,
-		?campaign:String,
-		?channel:String,
-		?tags:Array<String>,
-		?alias:String,
-		?type:UrlType,
-		?duration:Int,
 	}):{url:String};
 }
 
 @:enum
-abstract UrlType(Int) to Int {
+abstract UrlType(Int) {
 	var Standard = 0;
 	var OneTimeUse = 1;
 	var Marketing = 2;
+}
+
+typedef LinkData = {
+	?data:DynamicAccess<String>,
+	?channel:String,
+	?feature:String,
+	?campaign:String,
+	?stage:String,
+	?tags:Array<String>,
+	?alias:String,
+	?duration:Int,
+	?type:UrlType,
 }
