@@ -9,10 +9,11 @@ abstract Branch(Remote<BranchApi>) {
 	public function new(client) {
 		this = new Remote<BranchApi>(
 			client, 
-			new RemoteEndpoint(new Host('api.branch.io', 443))
-				.sub({
-					path: ['v1']
-				})
+			{
+				scheme: 'https',
+				host: new Host('api.branch.io', 443),
+				path: ['v1'],
+			}
 		);
 	}
 }
